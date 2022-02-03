@@ -2,13 +2,14 @@
 import './App.css';
 import { useFetch } from './useFetch';
 import ArtistList from './ArtistList';
+import CannaList from './CannaList';
 
 function App() {
-  const { artists, setArtists } = useFetch();
-  console.log(artists);
+  const { artists, cannabis } = useFetch();
   return (
     <div className="App">
-      <ArtistList artists={artists}/>
+      <ArtistList artists={artists} />
+      <CannaList cannabis={cannabis} />
     </div>
   );
 }
