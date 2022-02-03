@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { getArtists, getBooks, getCannabis } from './services/fetch-utils';
+import { getArtists, getBeatles, getBooks, getCannabis } from './services/fetch-utils';
 
 export const useFetch = () => {
   const [artists, setArtists] = useState([]);
   const [cannabis, setCannabis] = useState([]);
   const [books, setBooks] = useState([]);
+  const [beatles, setBeatles] = useState([]);
 
   const fetchArtists = async () => {
     const data = await getArtists();
@@ -21,12 +22,18 @@ export const useFetch = () => {
     setBooks(data);
   };
 
+  const fetchBeatles = async () => {
+    const data = await getBeatles();
+    setBeatles(data);
+  };
+
   useEffect(() => {
     fetchArtists();
     fetchCannabis();
     fetchBooks();
+    fetchBeatles();
   }, []);
 
-  return { artists, cannabis, books };
+  return { artists, cannabis, books, beatles };
 };
 
