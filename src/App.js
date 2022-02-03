@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useFetch } from './useFetch';
+import ArtistList from './ArtistList';
+import CannaList from './CannaList';
+import BooksList from './BooksList';
+import BeatlesList from './BeatlesList';
 
 function App() {
+  const { artists, cannabis, books, beatles } = useFetch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Async List</h1>
+      <ArtistList artists={artists} />
+      <CannaList cannabis={cannabis} />
+      <BooksList books={books} />
+      <BeatlesList beatles={beatles} />
     </div>
   );
 }
