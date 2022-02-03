@@ -6,7 +6,7 @@ export default function CannaList({ cannabis }) {
     {cannabis.map((strain, i) => {
       return (
         <CannaItem 
-          key={strain + i}
+          key={strain.strain + i}
           name={strain.strain}
           thc={strain.thc}
           cbd={strain.cbd}
