@@ -10,6 +10,7 @@ function App() {
   const { artists, cannabis, books, beatles } = useFetch();
   return (
     <div className="App">
+      <h1>React Async List</h1>
       <ArtistList artists={artists} />
       <CannaList cannabis={cannabis} />
       <BooksList books={books} />
