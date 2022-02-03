@@ -6,6 +6,7 @@ export const useFetch = () => {
 
   const fetchArtists = async () => {
     const data = await getArtists();
+    console.log(data);
     setArtists(data);
   };
 
